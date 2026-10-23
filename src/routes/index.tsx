@@ -38,38 +38,9 @@ const printPreviews = [
 ];
 
 const illustrativeMessages = [
-  {
-    platform: "WhatsApp",
-    image: "/images/atividade-colorindo.webp",
-    quote: "Já imprimi e meu filho amou!",
-    messages: ["Consegui imprimir em casa, sem complicação.", "Meu filho escolheu logo a atividade de colorir! 💛"],
-    tint: "bg-[#E7F8EE]",
-    accent: "text-[#218A57]",
-  },
-  {
-    platform: "Instagram",
-    image: "/images/material-impressora.webp",
-    quote: "Ficou tão bonito no papel!",
-    messages: ["Olha como o material fica lindo impresso! 😍", "Adorei poder preparar as atividades em casa."],
-    tint: "bg-[#FBEAF6]",
-    accent: "text-[#C34F92]",
-  },
-  {
-    platform: "WhatsApp",
-    image: "/images/atividades-mesa-xadrez.webp",
-    quote: "Nossa tarde ganhou novas ideias.",
-    messages: ["Separei tudo numa pastinha.", "Agora é só escolher uma atividade quando queremos brincar juntos. ✨"],
-    tint: "bg-[#E7F8EE]",
-    accent: "text-[#218A57]",
-  },
-  {
-    platform: "Instagram",
-    image: "/images/impressao-mesa-madeira.webp",
-    quote: "É só escolher, imprimir e brincar.",
-    messages: ["Adorei a ideia de ter diferentes propostas à mão.", "Colorir, observar, contar... muitas formas de explorar! 🌈"],
-    tint: "bg-[#FBEAF6]",
-    accent: "text-[#C34F92]",
-  },
+  { platform: "WhatsApp", image: "/images/prova-social-carla.webp", fallback: "/images/mundo-descobertas-kit.webp", name: "Carla", quote: "Já imprimi e meu filho amou!", tint: "bg-[#E8F8EC] text-[#207A4A]" },
+  { platform: "Instagram", image: "/images/prova-social-ana.webp", fallback: "/images/kit-digital-tablet.webp", name: "Ana Carolina", quote: "Minha filha ficou animada com as atividades.", tint: "bg-[#FCEAF5] text-[#AE4681]" },
+  { platform: "WhatsApp", image: "/images/prova-social-fernanda.webp", fallback: "/images/impressao-mesa-madeira.webp", name: "Fernanda", quote: "As folhas ficaram lindas impressas.", tint: "bg-[#E8F8EC] text-[#207A4A]" },
 ];
 
 const imageNote = "Mockup ilustrativo: as páginas mostradas são exemplos visuais. O conteúdo imprimível final ainda será produzido.";
@@ -212,34 +183,28 @@ function Index() {
         <div className="pointer-events-none absolute -right-24 bottom-0 size-72 rounded-full bg-[#FFEBCF] blur-3xl" />
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#CDE8F7] bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[.13em] text-[#1479B8] shadow-sm"><MessageCircle size={15} /> Imagine essas descobertas na sua casa</span>
-            <h2 id="social-title" className="mt-5 text-3xl font-black leading-tight tracking-[-.04em] text-[#17344C] sm:text-5xl">Pequenos momentos que viram <span className="text-[#1479B8]">grandes memórias.</span></h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#5D7180] sm:text-lg">Veja como o material pode fazer parte da rotina da família — do arquivo digital às primeiras brincadeiras no papel.</p>
-            <p className="mx-auto mt-3 max-w-xl text-xs leading-5 text-[#728997]">As conversas abaixo são exemplos fictícios de uso, não depoimentos de clientes. As fotografias são mockups ilustrativos.</p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#CDE8F7] bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[.13em] text-[#1479B8] shadow-sm"><MessageCircle size={15} /> Inspire-se com o material</span>
+            <h2 id="social-title" className="mt-5 text-3xl font-black leading-tight tracking-[-.04em] text-[#17344C] sm:text-5xl">Imagine a alegria de descobrir algo novo <span className="text-[#1479B8]">a cada atividade.</span></h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#5D7180] sm:text-lg">Veja três cenas que ilustram como uma família poderia receber o kit, imprimir as páginas e compartilhar seus momentos de descoberta.</p>
           </div>
-          <div className="mt-11 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {illustrativeMessages.map((item, index) => (
-              <article key={item.quote} className="group overflow-hidden rounded-[1.7rem] border border-[#DCEAF1] bg-white shadow-[0_14px_40px_rgba(24,67,94,.08)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(24,67,94,.13)]">
-                <div className="relative overflow-hidden bg-[#E6F4FC]">
-                  <img src={item.image} alt={`Exemplo ilustrativo do material infantil impresso: ${item.quote}`} loading="lazy" className="aspect-[5/4] w-full object-cover transition duration-500 group-hover:scale-105" />
-                  <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-wide text-[#31576B] shadow-sm">Cena ilustrativa {String(index + 1).padStart(2, "0")}</span>
+          <div className="mt-11 grid gap-5 md:grid-cols-3">
+            {illustrativeMessages.map((item) => (
+              <article key={item.name} className="group overflow-hidden rounded-[1.8rem] border border-[#DCEAF1] bg-white p-2.5 shadow-[0_14px_40px_rgba(24,67,94,.08)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(24,67,94,.13)]">
+                <div className="relative overflow-hidden rounded-[1.3rem] bg-[#EAF6FC]">
+                  <img src={item.image} alt={`Mockup ilustrativo de conversa em ${item.platform} com o produto Mundo das Descobertas Kids impresso`} loading="lazy" onError={(event) => { event.currentTarget.onerror = null; event.currentTarget.src = item.fallback; }} className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                  <span className={`absolute left-3 top-3 rounded-full px-3 py-1.5 text-[11px] font-black shadow-sm ${item.tint}`}>{item.platform} · Simulação</span>
                 </div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold ${item.tint} ${item.accent}`}><MessageCircle size={13} /> Exemplo {item.platform}</span>
-                    <span className="text-[10px] font-semibold text-[#8396A1]">Simulação</span>
-                  </div>
-                  <h3 className="mt-4 text-lg font-black leading-6 text-[#23445B]">“{item.quote}”</h3>
-                  <div className="mt-4 space-y-2 rounded-2xl bg-[#F7F9F7] p-3.5">
-                    {item.messages.map((message) => <p key={message} className="rounded-xl rounded-tl-sm bg-white px-3.5 py-3 text-[13px] leading-5 text-[#3C5969] shadow-[0_1px_4px_rgba(25,60,81,.06)]">{message}</p>)}
-                  </div>
+                <div className="px-3 pb-4 pt-5 sm:px-4">
+                  <p className="text-xs font-black uppercase tracking-[.14em] text-[#1479B8]">Cenário ilustrativo</p>
+                  <h3 className="mt-2 text-lg font-black leading-snug text-[#23445B]">“{item.quote}”</h3>
+                  <p className="mt-2 text-xs leading-5 text-[#6B8493]">Mensagem fictícia criada para demonstrar a apresentação do kit; não é avaliação de uma compradora real.</p>
                 </div>
               </article>
             ))}
           </div>
-          <div className="mx-auto mt-10 max-w-3xl rounded-[1.5rem] border border-[#D9E9F2] bg-white px-6 py-7 text-center shadow-[0_12px_32px_rgba(24,67,94,.06)] sm:px-10">
-            <h3 className="text-xl font-black text-[#17344C] sm:text-2xl">Que tal criar seus próprios momentos de descoberta?</h3>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#617887]">Explore o que está previsto para o Mundo das Descobertas Kids e acompanhe o desenvolvimento do kit.</p>
+          <div className="mx-auto mt-10 max-w-3xl rounded-[1.6rem] border border-[#D9E9F2] bg-white px-6 py-7 text-center shadow-[0_12px_32px_rgba(24,67,94,.06)] sm:px-10">
+            <h3 className="text-xl font-black text-[#17344C] sm:text-2xl">Tudo começa com uma folha e uma boa ideia.</h3>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#617887]">Conheça a proposta do kit e descubra como as atividades foram pensadas para momentos de diversão em família.</p>
             <a href="#oferta" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#F46A3D] px-7 py-4 text-sm font-black text-white shadow-[0_10px_24px_rgba(244,106,61,.2)] transition hover:-translate-y-0.5 hover:bg-[#DF542D]">Conhecer o kit <ArrowRight size={17}/></a>
           </div>
         </div>
