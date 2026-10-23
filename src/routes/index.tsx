@@ -3,10 +3,12 @@ import {
   ArrowDown,
   ArrowRight,
   Brain,
+  Camera,
   Check,
   Download,
   Heart,
   Hash,
+  MessageCircle,
   Palette,
   Puzzle,
   Printer,
@@ -28,6 +30,13 @@ const categories = [
   { icon: Puzzle, title: "Jogos educativos", detail: "Aprender brincando em cada página", color: "bg-[#F1E9FC] text-[#8653B8]" },
 ];
 
+const printPreviews = [
+  { src: "/images/impressao-mesa-madeira.webp", title: "A mesa vira um cantinho de descobertas", detail: "Capa e folhas avulsas em um exemplo de impressão caseira.", alt: "Cena ilustrativa de folhas de atividades em uma mesa de madeira, com lápis ao lado" },
+  { src: "/images/atividade-colorindo.webp", title: "Uma folha, muitas possibilidades", detail: "Uma prévia de atividade de colorir com materiais simples.", alt: "Cena ilustrativa de uma mão colorindo um leão em uma folha impressa sobre mesa branca" },
+  { src: "/images/atividades-mesa-xadrez.webp", title: "Tudo separado para a brincadeira", detail: "Um exemplo de como organizar as folhas em uma pasta.", alt: "Cena ilustrativa de atividades impressas e giz de cera sobre uma mesa com toalha xadrez" },
+  { src: "/images/material-impressora.webp", title: "Do arquivo para o papel", detail: "Uma visualização do material saindo da impressora de casa.", alt: "Cena ilustrativa de uma pessoa segurando uma capa impressa ao lado de uma impressora doméstica" },
+];
+
 const imageNote = "Mockup ilustrativo: as páginas mostradas são exemplos visuais. O conteúdo imprimível final ainda será produzido.";
 
 function Index() {
@@ -46,6 +55,7 @@ function Index() {
         <nav className="hidden items-center gap-7 text-sm font-bold text-[#52697A] md:flex">
           <a className="transition hover:text-[#1479B8]" href="#categorias">Atividades</a>
           <a className="transition hover:text-[#1479B8]" href="#kit">O que vem no kit</a>
+          <a className="transition hover:text-[#1479B8]" href="#na-pratica">Na prática</a>
           <a className="transition hover:text-[#1479B8]" href="#duvidas">Dúvidas</a>
         </nav>
         <a href="#oferta" className="shrink-0 rounded-full bg-[#1479B8] px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-[#125B8A] sm:px-5 sm:py-3 sm:text-sm">Conhecer o kit <ArrowRight className="ml-1 inline" size={15} /></a>
@@ -134,6 +144,23 @@ function Index() {
           <LifestyleCard src="/images/pai-e-crianca.webp" alt="Pai acompanha o filho enquanto ele colore uma atividade" title="Fazer junto, no ritmo da criança" text="Uma página pode ser o começo de uma conversa, uma ideia ou uma nova brincadeira." />
         </div>
         <p className="mt-4 text-center text-[11px] leading-5 text-[#788994]">Cenas ilustrativas de uso do produto. As páginas finais do material ainda serão definidas.</p>
+      </section>
+
+      <section id="na-pratica" className="scroll-mt-24 border-y border-[#DDEBE6] bg-[#F0F7F3]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#CFE5D8] bg-white px-3.5 py-2 text-[10px] font-black uppercase tracking-[.15em] text-[#287250]"><MessageCircle size={14} /> Cenas ilustrativas</span>
+            <h2 className="mt-5 text-3xl font-black leading-tight tracking-[-.035em] text-[#17344C] sm:text-4xl">Imagine o material na mesa da sua casa.</h2>
+            <p className="mt-4 leading-7 text-[#52697A]">Quatro prévias em cenários do dia a dia, com folhas impressas, lápis e espaço para brincar. Toque nas fotos para ver os detalhes.</p>
+          </div>
+          <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
+            {printPreviews.map((preview, i) => <article key={preview.src} className="w-[80vw] max-w-[330px] shrink-0 snap-center overflow-hidden rounded-[1.4rem] border border-[#D7E5DC] bg-[#EDE9E0] shadow-[0_10px_30px_rgba(29,69,49,.08)] sm:w-auto sm:max-w-none">
+              <div className="flex items-center gap-2.5 bg-[#176854] px-4 py-3 text-white"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-white/15"><Camera size={17} /></span><div><p className="text-xs font-extrabold">Prévia do material · 0{i + 1}</p><p className="mt-0.5 text-[10px] text-white/80">Imagem ilustrativa gerada por IA</p></div></div>
+              <div className="p-2.5"><div className="overflow-hidden rounded-xl rounded-tl-sm bg-white p-1.5 shadow-sm"><a href={preview.src} target="_blank" rel="noreferrer" aria-label={`Ampliar imagem ilustrativa: ${preview.title}`} className="block overflow-hidden rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1479B8]"><img src={preview.src} alt={preview.alt} width={900} height={1125} loading="lazy" className="aspect-[4/5] w-full object-contain transition duration-200 hover:brightness-105" /></a><div className="px-2 pb-3 pt-3"><h3 className="text-sm font-extrabold leading-5 text-[#23445B]">{preview.title}</h3><p className="mt-1.5 text-xs leading-5 text-[#647A86]">{preview.detail}</p></div></div></div>
+            </article>)}
+          </div>
+          <p className="mt-4 text-center text-xs leading-6 text-[#637A6C]">Estas imagens são mockups gerados por IA para demonstrar o conceito. Não representam fotos ou depoimentos de clientes. As páginas finais ainda estão em criação.</p>
+        </div>
       </section>
 
       <section className="bg-[#FFF3CC]">
