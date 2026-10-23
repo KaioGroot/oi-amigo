@@ -9,7 +9,6 @@ import {
   Leaf,
   ShieldCheck,
   Sparkles,
-  Star,
 } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -56,10 +55,10 @@ function Index() {
           <h1 className="max-w-2xl text-[2.65rem] font-black leading-[1.03] tracking-[-.045em] text-[#263b30] sm:text-6xl">Menos tela.<br /><span className="text-[#71916c]">Mais descobertas</span> juntinhos.</h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-[#5c6c61]">Um kit digital com brincadeiras curtas e gostosas para transformar um tempinho em casa em momentos de curiosidade, conversa e conexão.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#oferta" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#e78c59] px-7 py-4 text-base font-extrabold text-white shadow-[0_8px_20px_rgba(192,111,65,.2)] transition hover:-translate-y-0.5 hover:bg-[#d97b48]">Quero ver o kit <ArrowRight size={18} /></a>
+            <a href="#oferta" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#b85430] px-7 py-4 text-base font-extrabold text-white shadow-[0_8px_20px_rgba(123,61,37,.2)] transition hover:-translate-y-0.5 hover:bg-[#a94d2c]">Quero ver o kit <ArrowRight size={18} /></a>
             <span className="flex items-center gap-2 text-sm font-medium text-[#6b786d]"><Clock3 size={16} /> Atividades de 10 a 20 min</span>
           </div>
-          <div className="mt-7 flex items-center gap-2 text-sm text-[#637265]"><span className="flex text-[#e5a342]" aria-label="Material preparado com carinho"><Star size={15} fill="currentColor" /><Star size={15} fill="currentColor" /><Star size={15} fill="currentColor" /><Star size={15} fill="currentColor" /><Star size={15} fill="currentColor" /></span><span>Feito para caber na vida real da família</span></div>
+          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold text-[#637265]"><span className="inline-flex items-center gap-1.5"><Check size={15} className="text-[#62805d]" /> Sem telas</span><span className="inline-flex items-center gap-1.5"><Check size={15} className="text-[#62805d]" /> Materiais de casa</span><span className="inline-flex items-center gap-1.5"><Check size={15} className="text-[#62805d]" /> No ritmo da criança</span></div>
         </div>
 
         <div className="relative mx-auto w-full max-w-[510px]">
@@ -136,7 +135,7 @@ function Index() {
             <div className="my-5 border-t border-dashed border-[#dfe3d7]" />
             <ul className="space-y-3">{included.slice(0, 3).map((item) => <li key={item} className="flex gap-2.5 text-sm text-[#58675a]"><Check size={16} className="mt-0.5 shrink-0 text-[#71916c]" />{item}</li>)}</ul>
             <div className="mt-6 rounded-2xl bg-[#f5f5ed] px-4 py-4 text-center"><span className="text-xs font-semibold text-[#788276]">Preço sugerido para lançamento</span><p className="mt-1 text-4xl font-black tracking-tight">R$ 19,90</p><p className="mt-1 text-xs text-[#7c877b]">valor único pelo material digital</p></div>
-            <a href="#como-funciona" className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#e78c59] px-6 py-4 text-center font-extrabold text-white transition hover:bg-[#d97b48]">Quero conhecer o kit <ArrowRight size={17} /></a>
+            <a href="#como-funciona" className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#b85430] px-6 py-4 text-center font-extrabold text-white transition hover:bg-[#a94d2c]">Quero conhecer o kit <ArrowRight size={17} /></a>
             <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-[11px] leading-5 text-[#818b7f]"><ShieldCheck size={14} /> Material educativo para brincar em família</p>
           </div>
           <p className="mx-auto mt-5 max-w-lg text-center text-xs leading-5 text-white/60">O valor acima é uma sugestão de posicionamento. A compra ainda depende da configuração de um checkout e da confirmação do preço final.</p>
