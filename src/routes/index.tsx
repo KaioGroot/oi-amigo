@@ -37,6 +37,41 @@ const printPreviews = [
   { src: "/images/material-impressora.webp", title: "Do arquivo para o papel", detail: "Uma visualização do material saindo da impressora de casa.", alt: "Cena ilustrativa de uma pessoa segurando uma capa impressa ao lado de uma impressora doméstica" },
 ];
 
+const illustrativeMessages = [
+  {
+    platform: "WhatsApp",
+    image: "/images/atividade-colorindo.webp",
+    quote: "Já imprimi e meu filho amou!",
+    messages: ["Consegui imprimir em casa, sem complicação.", "Meu filho escolheu logo a atividade de colorir! 💛"],
+    tint: "bg-[#E7F8EE]",
+    accent: "text-[#218A57]",
+  },
+  {
+    platform: "Instagram",
+    image: "/images/material-impressora.webp",
+    quote: "Ficou tão bonito no papel!",
+    messages: ["Olha como o material fica lindo impresso! 😍", "Adorei poder preparar as atividades em casa."],
+    tint: "bg-[#FBEAF6]",
+    accent: "text-[#C34F92]",
+  },
+  {
+    platform: "WhatsApp",
+    image: "/images/atividades-mesa-xadrez.webp",
+    quote: "Nossa tarde ganhou novas ideias.",
+    messages: ["Separei tudo numa pastinha.", "Agora é só escolher uma atividade quando queremos brincar juntos. ✨"],
+    tint: "bg-[#E7F8EE]",
+    accent: "text-[#218A57]",
+  },
+  {
+    platform: "Instagram",
+    image: "/images/impressao-mesa-madeira.webp",
+    quote: "É só escolher, imprimir e brincar.",
+    messages: ["Adorei a ideia de ter diferentes propostas à mão.", "Colorir, observar, contar... muitas formas de explorar! 🌈"],
+    tint: "bg-[#FBEAF6]",
+    accent: "text-[#C34F92]",
+  },
+];
+
 const imageNote = "Mockup ilustrativo: as páginas mostradas são exemplos visuais. O conteúdo imprimível final ainda será produzido.";
 
 function Index() {
@@ -57,6 +92,7 @@ function Index() {
           <a className="transition hover:text-[#1479B8]" href="#categorias">Atividades</a>
           <a className="transition hover:text-[#1479B8]" href="#kit">O que vem no kit</a>
           <a className="transition hover:text-[#1479B8]" href="#na-pratica">Na prática</a>
+          <a className="transition hover:text-[#1479B8]" href="#exemplos-sociais">Inspiração</a>
           <a className="transition hover:text-[#1479B8]" href="#duvidas">Dúvidas</a>
         </nav>
         <a href="#oferta" className="shrink-0 rounded-full bg-[#1479B8] px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-[#125B8A] sm:px-5 sm:py-3 sm:text-sm">Conhecer o kit <ArrowRight className="ml-1 inline" size={15} /></a>
@@ -168,6 +204,44 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_auto]">
           <div className="max-w-3xl"><span className="text-xs font-black uppercase tracking-[.18em] text-[#A06B00]">Uma pausa criativa cabe no seu dia</span><h2 className="mt-3 text-3xl font-black leading-tight tracking-[-.035em] text-[#17344C] sm:text-4xl">Troque o “o que vamos fazer?” por uma nova descoberta.</h2><p className="mt-4 max-w-2xl leading-7 text-[#5C6871]">Conheça a proposta do Mundo das Descobertas Kids e imagine novas possibilidades para aprender brincando em casa.</p></div>
           <a href="#oferta" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F46A3D] px-7 py-4 text-sm font-black text-white shadow-[0_9px_22px_rgba(244,106,61,.2)] transition hover:-translate-y-0.5 hover:bg-[#DF542D]">Quero conhecer o kit <ArrowRight size={17} /></a>
+        </div>
+      </section>
+
+      <section id="exemplos-sociais" className="relative scroll-mt-24 overflow-hidden bg-[#F4FAFD] px-5 py-20 sm:px-8 sm:py-28" aria-labelledby="social-title">
+        <div className="pointer-events-none absolute -left-24 top-0 size-72 rounded-full bg-[#D9F0FD] blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 bottom-0 size-72 rounded-full bg-[#FFEBCF] blur-3xl" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#CDE8F7] bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[.13em] text-[#1479B8] shadow-sm"><MessageCircle size={15} /> Imagine essas descobertas na sua casa</span>
+            <h2 id="social-title" className="mt-5 text-3xl font-black leading-tight tracking-[-.04em] text-[#17344C] sm:text-5xl">Pequenos momentos que viram <span className="text-[#1479B8]">grandes memórias.</span></h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#5D7180] sm:text-lg">Veja como o material pode fazer parte da rotina da família — do arquivo digital às primeiras brincadeiras no papel.</p>
+            <p className="mx-auto mt-3 max-w-xl text-xs leading-5 text-[#728997]">As conversas abaixo são exemplos fictícios de uso, não depoimentos de clientes. As fotografias são mockups ilustrativos.</p>
+          </div>
+          <div className="mt-11 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {illustrativeMessages.map((item, index) => (
+              <article key={item.quote} className="group overflow-hidden rounded-[1.7rem] border border-[#DCEAF1] bg-white shadow-[0_14px_40px_rgba(24,67,94,.08)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(24,67,94,.13)]">
+                <div className="relative overflow-hidden bg-[#E6F4FC]">
+                  <img src={item.image} alt={`Exemplo ilustrativo do material infantil impresso: ${item.quote}`} loading="lazy" className="aspect-[5/4] w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-wide text-[#31576B] shadow-sm">Cena ilustrativa {String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold ${item.tint} ${item.accent}`}><MessageCircle size={13} /> Exemplo {item.platform}</span>
+                    <span className="text-[10px] font-semibold text-[#8396A1]">Simulação</span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-black leading-6 text-[#23445B]">“{item.quote}”</h3>
+                  <div className="mt-4 space-y-2 rounded-2xl bg-[#F7F9F7] p-3.5">
+                    {item.messages.map((message) => <p key={message} className="rounded-xl rounded-tl-sm bg-white px-3.5 py-3 text-[13px] leading-5 text-[#3C5969] shadow-[0_1px_4px_rgba(25,60,81,.06)]">{message}</p>)}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mx-auto mt-10 max-w-3xl rounded-[1.5rem] border border-[#D9E9F2] bg-white px-6 py-7 text-center shadow-[0_12px_32px_rgba(24,67,94,.06)] sm:px-10">
+            <h3 className="text-xl font-black text-[#17344C] sm:text-2xl">Que tal criar seus próprios momentos de descoberta?</h3>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#617887]">Explore o que está previsto para o Mundo das Descobertas Kids e acompanhe o desenvolvimento do kit.</p>
+            <a href="#oferta" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#F46A3D] px-7 py-4 text-sm font-black text-white shadow-[0_10px_24px_rgba(244,106,61,.2)] transition hover:-translate-y-0.5 hover:bg-[#DF542D]">Conhecer o kit <ArrowRight size={17}/></a>
+          </div>
         </div>
       </section>
 
