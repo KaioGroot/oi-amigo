@@ -50,9 +50,8 @@ function Index() {
 
       <header className="sticky top-0 z-30 border-b border-[#E5EDF1]/80 bg-[#FFFCF4]/95 shadow-[0_3px_14px_rgba(24,52,75,.04)] backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-4">
-        <a href="#topo" className="flex items-center gap-2.5" aria-label="Mundo das Descobertas Kids — início">
-          <span className="grid size-11 place-items-center rounded-2xl bg-[#E4F3FC] text-[#1479B8]"><Sparkles size={22} /></span>
-          <span className="text-sm font-black leading-tight tracking-tight sm:text-base">Mundo das<br /><span className="text-[#1479B8]">Descobertas <span className="text-[#F46A3D]">KIDS</span></span></span>
+        <a href="#topo" className="flex shrink-0 items-center" aria-label="Mundo das Descobertas Kids — início">
+          <img src="/images/logo-mundo-descobertas.svg" alt="Mundo das Descobertas Kids" width={540} height={140} className="h-[52px] w-auto max-w-[174px] object-contain sm:h-[66px] sm:max-w-[235px]" />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-bold text-[#52697A] md:flex">
           <a className="transition hover:text-[#1479B8]" href="#categorias">Atividades</a>
