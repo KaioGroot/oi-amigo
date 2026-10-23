@@ -40,6 +40,8 @@ const printPreviews = [
 const imageNote = "Mockup ilustrativo: as páginas mostradas são exemplos visuais. O conteúdo imprimível final ainda será produzido.";
 
 function Index() {
+  const checkoutUrl = import.meta.env.VITE_CHECKOUT_URL?.trim();
+
   return (
     <main id="topo" className="min-h-screen overflow-hidden bg-[#FFFCF4] pb-20 text-[#18344B] sm:pb-0">
       <div className="bg-[#125B8A] px-4 py-2.5 text-center text-xs font-bold tracking-wide text-white sm:text-sm">
@@ -173,7 +175,29 @@ function Index() {
       <section id="oferta" className="scroll-mt-24 bg-[#125B8A] px-5 py-20 text-white sm:px-8 sm:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_.8fr]">
           <div><span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[.16em] text-[#FFE28A]"><Sparkles size={13} /> Conheça a proposta</span><h2 className="mt-5 max-w-2xl text-3xl font-black leading-tight tracking-[-.035em] sm:text-4xl">Um kit colorido para abrir espaço para a curiosidade.</h2><p className="mt-4 max-w-xl leading-7 text-white/80">A proposta é oferecer atividades imprimíveis para transformar momentos comuns em oportunidades de explorar, criar e aprender brincando.</p><div className="mt-6 flex flex-wrap gap-2.5">{["Alfabeto", "Números", "Cores", "Pintura", "Jogos"].map((item) => <span key={item} className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold">{item}</span>)}</div></div>
-          <div className="rounded-[1.7rem] bg-white p-6 text-[#18344B] shadow-2xl sm:rounded-[2rem] sm:p-8"><div className="flex items-center gap-3"><span className="grid size-12 place-items-center rounded-2xl bg-[#E4F3FC] text-[#1479B8]"><Printer size={22} /></span><div><p className="text-xs font-black uppercase tracking-wider text-[#1479B8]">O que está previsto</p><h3 className="mt-0.5 text-xl font-black">Um kit de atividades em PDF</h3></div></div><ul className="mt-6 space-y-3 text-sm text-[#52697A]">{["Atividades para imprimir em casa", "Categorias educativas variadas", "Propostas para compartilhar em família"].map((item) => <li key={item} className="flex gap-2.5"><Check size={17} className="mt-0.5 shrink-0 text-[#3D9655]" />{item}</li>)}</ul><a href="#kit" className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#F46A3D] px-6 py-4 text-center font-black text-white transition hover:bg-[#DF542D]">Ver detalhes do material <ArrowRight size={17} /></a><p className="mt-4 text-center text-[11px] leading-5 text-[#788994]">Amostras ilustrativas. Conteúdo final, quantidade de páginas, preço e link de compra serão definidos quando o produto estiver pronto.</p></div>
+          <div className="rounded-[1.7rem] bg-white p-5 text-[#18344B] shadow-2xl sm:rounded-[2rem] sm:p-7">
+            <div className="text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF2D4] px-3 py-1.5 text-[10px] font-black uppercase tracking-[.12em] text-[#9E6500]"><Sparkles size={13} /> Conheça o kit digital</span>
+              <h3 className="mt-3 text-2xl font-black tracking-tight sm:text-[1.7rem]">Mundo das Descobertas Kids</h3>
+              <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-[#52697A]">Atividades para imprimir, criar e aprender brincando em família.</p>
+            </div>
+            <figure className="relative mx-auto mt-5 max-w-lg overflow-hidden rounded-2xl border border-[#E5EDF1] bg-[#EAF6FC] shadow-[0_12px_30px_rgba(24,52,75,.12)]">
+              <img src="/images/mundo-descobertas-kit.webp" alt="Mockup ilustrativo do Mundo das Descobertas Kids, com o livro e folhas de atividades" width={900} height={600} loading="lazy" className="aspect-[3/2] w-full object-cover" />
+              <figcaption className="absolute bottom-2 left-2 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold text-[#52697A] shadow-sm">Mockup ilustrativo</figcaption>
+            </figure>
+            <ul className="mt-5 grid gap-2.5 text-sm text-[#52697A]">
+              {["Formato digital para imprimir em casa", "Atividades variadas para aprender brincando", "Propostas para compartilhar em família"].map((item) => <li key={item} className="flex items-start gap-2.5"><Check size={17} className="mt-0.5 shrink-0 text-[#3D9655]" />{item}</li>)}
+            </ul>
+            {checkoutUrl ? (
+              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#F46A3D] px-5 py-4 text-center text-base font-black text-white shadow-[0_10px_24px_rgba(244,106,61,.25)] transition hover:-translate-y-0.5 hover:bg-[#DF542D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F46A3D]">Quero garantir meu kit <ArrowRight size={19} /></a>
+            ) : (
+              <div className="mt-6">
+                <button type="button" disabled aria-label="Checkout indisponível: link de pagamento ainda não configurado" className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-[#F46A3D]/60 px-5 py-4 text-center text-base font-black text-white">Checkout em preparação <ArrowRight size={19} /></button>
+                <p className="mt-2 text-center text-xs font-semibold text-[#9B5C21]">O link de pagamento será disponibilizado quando a oferta estiver pronta.</p>
+              </div>
+            )}
+            <p className="mt-4 text-center text-[11px] leading-5 text-[#788994]">Imagem ilustrativa: as páginas exibidas são exemplos visuais. Conteúdo final e condições de compra serão confirmados antes do lançamento.</p>
+          </div>
         </div>
       </section>
 
