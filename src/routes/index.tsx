@@ -102,6 +102,38 @@ function Index() {
         </div>
       </section>
 
+      <section id="previa" className="bg-[#f5f0e3]">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[.85fr_1.15fr]">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-[#70856b]"><Sparkles size={13} /> Prévia do conceito</span>
+            <h2 className="mt-5 text-3xl font-black leading-tight tracking-[-.035em] sm:text-4xl">Um pedacinho da brincadeira, antes mesmo de imprimir.</h2>
+            <p className="mt-4 leading-7 text-[#657268]">Imagine escolher um cartão, colocar na mesa e descobrir junto. O kit vai reunir propostas visuais e simples para começar sem uma preparação complicada.</p>
+            <div className="mt-6 rounded-2xl border border-[#e4dcc9] bg-[#fffdf7] p-4 text-sm leading-6 text-[#667365]"><strong className="text-[#304a39]">Mockup ilustrativo:</strong> esta é uma apresentação visual do formato e da identidade. O conteúdo final do produto ainda será desenvolvido.</div>
+            <a href="#oferta" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#b85430] px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-[#a94d2c]">Conhecer a proposta <ArrowRight size={16} /></a>
+          </div>
+          <div className="relative mx-auto w-full max-w-[620px] rounded-[2rem] bg-[#dfd2b8] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,.65)] sm:p-8">
+            <div className="absolute left-8 top-8 h-2 w-24 rotate-[-8deg] rounded-full bg-[#d9a56d] opacity-75" />
+            <div className="absolute right-7 top-12 h-2 w-28 rotate-[7deg] rounded-full bg-[#91a986] opacity-80" />
+            <div className="relative mx-auto min-h-[420px] max-w-[510px]">
+              <div className="absolute right-0 top-14 hidden w-[42%] rotate-[7deg] rounded-xl border border-[#e6e0cf] bg-[#fffdf7] p-4 shadow-[0_12px_30px_rgba(63,57,42,.15)] sm:block">
+                <span className="text-[9px] font-extrabold uppercase tracking-[.15em] text-[#829078]">Trilha 02 · movimento</span><div className="mt-3 grid grid-cols-2 gap-2"><span className="grid aspect-square place-items-center rounded-xl bg-[#f7e4d7] text-3xl">🦋</span><span className="grid aspect-square place-items-center rounded-xl bg-[#e8efe0] text-3xl">🐌</span><span className="grid aspect-square place-items-center rounded-xl bg-[#f8edc9] text-3xl">🐞</span><span className="grid aspect-square place-items-center rounded-xl bg-[#e4edf0] text-3xl">🐛</span></div>
+              </div>
+              <div className="absolute bottom-0 left-0 hidden w-[38%] rotate-[-8deg] rounded-xl border border-[#e6e0cf] bg-[#fffdf7] p-4 shadow-[0_12px_30px_rgba(63,57,42,.13)] sm:block">
+                <span className="text-[9px] font-extrabold uppercase tracking-[.15em] text-[#829078]">Meu mapa de descobertas</span><div className="mt-4 space-y-3"><div className="h-2 rounded-full bg-[#e7eadf]" /><div className="h-2 w-4/5 rounded-full bg-[#e7eadf]" /><div className="h-16 rounded-lg border-2 border-dashed border-[#d7dfcf] bg-[#f7f8f1]" /></div><span className="mt-3 block text-center text-2xl">✏️</span>
+              </div>
+              <div className="absolute left-1/2 top-1/2 z-10 w-[88%] -translate-x-1/2 -translate-y-1/2 rotate-[-2deg] rounded-2xl border border-[#e8e1d1] bg-[#fffdf7] p-5 shadow-[0_20px_45px_rgba(63,57,42,.22)] sm:w-[62%] sm:p-6">
+                <div className="flex items-center justify-between"><span className="rounded-full bg-[#eaf0e4] px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-[.12em] text-[#66815d]">Cartão de aventura</span><span className="text-xl">🌿</span></div>
+                <h3 className="mt-4 text-2xl font-black leading-tight text-[#304a39]">Caça às texturas</h3><p className="mt-2 text-xs leading-5 text-[#69766b]">Encontre algo macio, algo liso e algo que faça um barulhinho.</p>
+                <div className="my-4 grid grid-cols-3 gap-2"><div className="rounded-xl bg-[#f5e4d5] p-2 text-center"><span className="block text-2xl">🧸</span><span className="mt-1 block text-[8px] font-extrabold uppercase tracking-wider text-[#786c5c]">macio</span></div><div className="rounded-xl bg-[#e8efe0] p-2 text-center"><span className="block text-2xl">🪨</span><span className="mt-1 block text-[8px] font-extrabold uppercase tracking-wider text-[#687562]">liso</span></div><div className="rounded-xl bg-[#f8edc9] p-2 text-center"><span className="block text-2xl">🍂</span><span className="mt-1 block text-[8px] font-extrabold uppercase tracking-wider text-[#796c4d]">áspero</span></div></div>
+                <div className="flex items-center justify-between border-t border-dashed border-[#e0e2d8] pt-3 text-[9px] font-bold text-[#7a8679]"><span>10 min · materiais de casa</span><span>01 / 21</span></div>
+              </div>
+              <div className="absolute bottom-5 right-2 z-20 rotate-[9deg] rounded-full border-4 border-[#f5f0e3] bg-[#bd7550] px-3 py-2 text-[9px] font-black uppercase tracking-wider text-white shadow-md sm:bottom-10 sm:right-9">prévia visual</div>
+            </div>
+            <p className="mt-2 text-center text-[10px] font-semibold text-[#7b7669]">Demonstração de layout · o material final pode mudar</p>
+          </div>
+        </div>
+      </section>
+
       <section id="como-funciona" className="bg-[#eef3e8]">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:items-center">
           <div><span className="text-xs font-extrabold uppercase tracking-[.18em] text-[#6c8964]">Do download à brincadeira</span><h2 className="mt-4 max-w-xl text-3xl font-black leading-tight tracking-[-.035em] sm:text-4xl">Um jeito leve de começar — sem precisar preparar tudo.</h2><p className="mt-5 max-w-lg leading-7 text-[#5f7062]">Escolha uma atividade, leia a dica para o adulto e convide a criança. Se ela quiser mudar as regras ou seguir outra ideia, tudo bem: a brincadeira é o caminho, não uma tarefa para cumprir.</p><a className="mt-7 inline-flex items-center gap-2 font-extrabold text-[#315c45] hover:gap-3" href="#o-que-vem">Veja o que vem no kit <ArrowRight size={16} /></a></div>
